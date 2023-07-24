@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Website By Sourav</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+
+        }
+
+        .header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(header-image.png);
+            background-size: cover;
+            background-position: center;
+            padding: 10px 8%;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .logo {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        nav button {
+            border: 0;
+            outline: 0;
+            background: #db0001;
+            color: #fff;
+            padding: 7px 20px;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .language-btn {
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            border: 1px solid white;
+            padding: 7px 10px;
+        }
+
+        .language-btn img {
+            margin-left: 10px;
+            width: 10px;
+        }
+
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .header-content h1 {
+            font-size: 60px;
+            line-height: 70px;
+            font-weight: 600;
+            max-width: 650px;
+        }
+
+        .header-content h3 {
+            font-family: 400;
+            margin-bottom: 20px;
+
+        }
+
+        .email-signup {
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            overflow: hidden;
+
+        }
+
+        .email-signup input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            margin-left: 20px;
+        }
+
+        .email-signup button {
+            background: #db0001;
+            border: 0;
+            outline: 0;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 15px 30px;
+        }
+
+        .features {
+            padding: 50px 12%;
+            font-size: 22px;
+
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px 0;
+
+        }
+
+        .text-col {
+            flex-basis: 50%;
+            margin-bottom: 20px;
+
+        }
+
+        .img-col {
+            flex-basis: 50%;
+            margin-bottom: 20px;
+
+        }
+
+        .img-col img {
+            display: block;
+            width: 90%;
+            margin: auto;
+
+        }
+
+        input[type="radio"] {
+            display: none;
+
+        }
+
+        .accordion .content {
+            background: #303030;
+            text-align: left;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s, padding 0.5s;
+        }
+
+        .accordion input[type="radio"]:checked+label+.content {
+            max-width: 600px;
+            padding: 30px 20px;
+
+        }
+
+        .accordion input[type="radio"]:checked+label::after {
+            transform: rotate(135deg);
+        }
+
+        .email-signup {
+            max-width: 500px;
+            margin: 20px auto 60px;
+            margin-left:45px ;
+        }
+
+         small {
+            font-size: 20px;
+        }
+
+        .footer {
+            padding: 40px 15% 10px;
+            border: 6px solid #333;
+            color: #777;
+
+        }
+
+        .footer h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 30px;
+        }
+
+        .footer .col {
+            flex-basis: 25%;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .footer .col a {
+            display: block;
+            text-decoration: none;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer .row {
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+
+        .footer .language-btn {
+            color: #fff;
+           border-radius: 3px;
+           padding: 10px 20px;
+        }
+        .copright-text{
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        @media only screen and (max-width: 600px){
+            .logo{
+                width: 100px;
+            }
+            nav button{
+                padding: 5px 10px;
+            }
+            nav .language-btn{
+                padding: 4px 8px;
+            }
+            .header-content{
+                position: unset;
+                transform: none;
+                padding-top: 150px;
+
+            }
+            .header-content h1{
+                font-size: 40px;
+            }
+            .email-signup button{
+                font-size: 12px;
+                padding: 10px 15px;
+            }
+            .text-col, .img-col{
+                flex-basis: 100%;
+
+            }
+            .features h2{
+                font-size: 30px;
+
+            }
+            .features p{
+                font-size: 15px;
+                
+            }
+            .row:nth-child(2),.row:nth-child(4){
+                flex-direction:column-reverse ;
+            }
+            .features .row{
+                padding: 10px 0;
+            } 
+            .faq h2{
+                font-size: 20px;
+
+            }  
+            .accordion .content{
+                font-size: 14px;
+            } 
+            .accordion li label{
+                padding: 10px;
+                font-size: 14px;
+            }  
+            label::after{
+                font-size: 22px;
+            }
+         }
+         .row_postersmaller{
+                 width: 100%;
+                  object-fit: contain;
+                   max-width: 200px;
+                    margin-right: 10px;
+                   transition: transform 450ms;
+            }
+            .row_posters{
+                display: flex;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                padding: 13px;
+            }
+            .row_poster:hover{
+                transform: scale(1.08);
+            }
+            .row_posters::-webkit-scrollbar{
+                display: none;
+            }
+            .row_posterlarge{
+                max-height: 250px;
+                transition: transform 450ms;
+                object-fit: contain;
+
+            }
+            .row_posterlarge:hover{
+                transform: scale(1.09);
+            }
+            .row{
+                color: white;
+                margin-left: 20px;
+                width: 100%;
+                padding: 8px;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <img src="logo.png" class="logo" alt="">
+            <div>
+                <button class="language-btn">English <img src="down-icon.png"></button>
+                <button>Sign in</button>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>Unlimited movies, TV shows and more</h1>
+            <h3>Watch anywhere. Cancel anytime.</h3>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <form class="email-signup">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Get Started</button>
+            </form>
+        </div>
+    </div>
+    <div class="features">
+        <div class="row">
+            <div class="text-col">
+                <h2>Enjoy on your TV</h2>
+                <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+            </div>
+            <div class="img-col">
+                <img src="feature-1.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-col">
+                <img src="feature-2.png">
+            </div>
+            <div class="text-col">
+                <h2>Download your shows to watch offline</h2>
+                <p>Save your favourites easily and always have something to watch.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-col">
+                <h2>Watch everywhere</h2>
+                <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            </div>
+            <div class="img-col">
+                <img src="feature-3.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-col">
+                <img src="feature-4.png">
+            </div>
+            <div class="text-col">
+                <h2>Create profiles for kids</h2>
+                <p>Send children on adventures with their favourite characters in a space made just for them—free with
+                    your membership.</p>
+            </div>
+        </div>
+    </div>
+<!-- Advance Section  -->
+<!-- netflix ORIGINALS -->
+<div class="row">
+    <h2>NETFLIX ORIGINALS</h2>
+    <div class="row_posters">
+        <img src="barbie.png" alt="" class="row_poster row_posterlarge">
+        <img src="large-movie2.jpg" alt="" class="row_poster row_posterlarge">
+        <img src="Moneyheist.png" alt="" class="row_poster row_posterlarge">
+        <img src="Antman.jpg" alt="" class="row_poster row_posterlarge">
+        <img src="Joker.png" alt="" class="row_poster row_posterlarge">
+        <img src="the-witch-2015 (1).png" alt="" class="row_poster row_posterlarge">
+        <img src="large-movie6.jpg" alt="" class="row_poster row_posterlarge">
+        <img src="large-movie7.jpg" alt="" class="row_poster row_posterlarge">
+        <img src="large-movie1.jpg" alt="" class="row_poster row_posterlarge">
+        <img src="Endgame.jpg" alt="" class="row_poster row_posterlarge">
+        <img src="rom9.png" alt="" class="row_poster row_posterlarge">
+
+    </div>
+</div>
+<!-- Trending now -->
+<div class="row">
+    <h2>Trending Now</h2>
+    <div class="row_posters">
+        <img src="oppenheimer.png" alt="" class="row_poster row_postersmaller ">
+        <img src="ted5.png" alt="" class="row_poster row_postersmaller">
+        <img src="ted6.png" alt="" class="row_poster row_postersmaller">
+        <img src="ted8.png" alt="" class="row_poster row_postersmaller">
+        <img src="Auqaman.png" alt="" class="row_poster row_postersmaller">
+        <img src="ted2.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="ted1.png" alt="" class="row_poster row_postersmaller">
+        <img src="black adam.png" alt="" class="row_poster row_postersmaller">
+    </div>
+    </div>
+    </div>
+</div>
+<!-- top rated -->
+<div class="row">
+    <h2>Top rated</h2>
+    <div class="row_posters">
+        <img src="top1.png" alt="" class="row_poster row_postersmaller"> 
+        <img src="titanic (1).png" alt="" class="row_poster row_postersmaller">
+        <img src="docterstrange.png" alt="" class="row_poster row_postersmaller">
+        <img src="pk (1).png" alt="" class="row_poster row_postersmaller">
+        <img src="gaurdianofthegalaxy.png" alt="" class="row_poster row_postersmaller">
+        <img src="top2.png" alt="" class="row_poster row_postersmaller">
+        <img src="top3.png" alt="" class="row_poster row_postersmaller">
+        <img src="top4.png" alt="" class="row_poster row_postersmaller">
+        <img src="the batman.jpg" alt="" class="row_poster row_postersmaller">
+</div>
+<!-- Action Movies -->
+<div class="row">
+    <h2>Action Movies</h2>
+    <div class="row_posters">
+        <img src="kgf.png" alt="" class="row_poster row_postersmaller">
+        <img src="specture.png" alt="" class="row_poster row_postersmaller">
+        <img src="venom.png" alt="" class="row_poster row_postersmaller">
+        <img src="img3.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="the batman.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="gamer.png" alt="" class="row_poster row_postersmaller">
+        <img src="attack.png" alt="" class="row_poster row_postersmaller">
+        <img src="war.png" alt="" class="row_poster row_postersmaller">
+        <img src="ac1 (1).png" alt="" class="row_poster row_postersmaller">
+        <img src="ac2.png" alt="" class="row_poster row_postersmaller">
+        <img src="ac9.png" alt="" class="row_poster row_postersmaller">
+    </div>
+</div>
+<!-- comedy Movies -->
+<div class="row">
+    <h2>comedy Movies</h2>
+    <div class="row_posters">
+        <img src="_com6.png" alt="" class="row_poster row_postersmaller">
+        <img src="_com2.png" alt="" class="row_poster row_postersmaller">
+        <img src="_com3.png" alt="" class="row_poster row_postersmaller">
+        <img src="_com4.png" alt="" class="row_poster row_postersmaller">
+        <img src="_com5.png" alt="" class="row_poster row_postersmaller">
+        <img src="the poltician.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="img1.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="mubarakan.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="the croods.png" alt="" class="row_poster row_postersmaller">
+        <img src="catoon.png" alt="" class="row_poster row_postersmaller">
+    </div>
+</div>
+<!-- Horror Movies -->
+<div class="row">
+    <h2>Horror Movies</h2>
+    <div class="row_posters">
+        <img src="hor1.png" alt="" class="row_poster row_postersmaller">
+        <img src="hor2.png" alt="" class="row_poster row_postersmaller">
+        <img src="hor3.png" alt="" class="row_poster row_postersmaller">
+        <img src="scream.png" alt="" class="row_poster row_postersmaller">
+        <img src="oculus.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="hor4.png" alt="" class="row_poster row_postersmaller">
+        <img src="hor5.png" alt="" class="row_poster row_postersmaller">
+        <img src="talvar.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="skyscraper.png" alt="" class="row_poster row_postersmaller">
+    </div>
+</div>
+<!-- Romance Movies -->
+<div class="row">
+    <h2>Romance Movies</h2>
+    <div class="row_posters">
+        <img src="rom7.png" alt="" class="row_poster row_postersmaller">
+        <img src="rom2.png" alt="" class="row_poster row_postersmaller">
+        <img src="rom3.png" alt="" class="row_poster row_postersmaller">
+        <img src="rom4.png" alt="" class="row_poster row_postersmaller">
+        <img src="rom5.png" alt="" class="row_poster row_postersmaller">
+        <img src="rom6.png" alt="" class="row_poster row_postersmaller">
+        <img src="rom-1.png"alt="" class="row_poster row_postersmaller">
+    </div>
+</div>
+<!-- documentaries -->
+<div class="row">
+    <h2>Documentaries Movies</h2>
+    <div class="row_posters">
+        <img src="the-kerala-story-.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="gandhi godse.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="the kashmir files.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="anek.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="narendra modi.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="paltan.jpg" alt="" class="row_poster row_postersmaller">
+        <img src="major.jpg" alt="" class="row_poster row_postersmaller">
+    </div>
+</div>
+<small>
+    Ready to watch? Enter your email to create or restart your membership.
+</small>
+<form class="email-signup">
+    <input type="email" placeholder="Email address" required>
+    <button type="submit">Get Started</button>
+</form>
+</div>
+    <div class="footer">
+        <h2>Questions? call 000-000-000-000</h2>
+        <div class="row">
+            <div class="col">
+                <a href="#">Investor relations</a>
+                <a href="#">Privacy</a>
+                <a href="#">Speed test</a>
+            </div>
+            <div class="col">
+                <a href="#">help Center</a>
+                <a href="#">Jobs</a>
+                <a href="#">cookies perferences</a>
+                <a href="#">legal Notices</a>
+            </div>
+            <div class="col">
+                <a href="#">Account</a>
+                <a href="#">ways to Watch</a>
+                <a href="#">corporate Informnation</a>
+                <a href="#">Only on Netflix</a>
+            </div>
+            <div class="col">
+                <a href="#">Media centre</a>
+                <a href="#">terms of Use </a>
+                <a href="#">Contact Us</a>
+                <a href="#">Only on Netflix</a>
+            </div>
+        </div>
+        <button class="language-btn">English <img src="down-icon.png"></button>
+        <p class="copright-text">netflix India</p>
+    </div>
+</body>
+</html>
